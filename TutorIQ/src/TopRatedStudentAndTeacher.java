@@ -30,7 +30,7 @@ public class TopRatedStudentAndTeacher {
 	
 	public void listOfAllRecomandedTeachers(WebDriver driver) {
 		
-		System.out.println("dinka");
+	
 		
 		driver.findElement(By.cssSelector("a[href='https://tutorsiq.com/recommended-tutors']")).click();
 

@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 	
-		System.setProperty("webdriver.chrome.driver", "D:/Projects/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
@@ -23,7 +23,9 @@ public class Main {
 		
 		sleep();
 		
-		listofTopRatedTeachers(driver);
+		FavoriteTutor(driver);
+		
+		//listofTopRatedTeachers(driver);
 	}
 	
 	public static void loginFunctionality(WebDriver driver){
@@ -59,6 +61,13 @@ public class Main {
 		TopRatedStudentAndTeacher obj = new TopRatedStudentAndTeacher();
 		
 		obj.listOfAllRecomandedTeachers(driver);
+	}
+
+	public static void FavoriteTutor(WebDriver driver) {
+		
+		FavoriteTutor obj = new FavoriteTutor();
+		
+		obj.getAllFavoriteTutor(driver);
 	}
 	
 	private static void sleep() {
