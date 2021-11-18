@@ -60,7 +60,6 @@ public class Login {
 		
 		driver.findElement(By.className("btn")).click();
 		
-		
 	}
 	private static void sleep(int i) {
 

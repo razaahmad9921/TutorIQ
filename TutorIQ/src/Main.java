@@ -23,11 +23,26 @@ public class Main {
 		
 		sleep();
 		
-		findTutor(driver);
+		//findTutor(driver);
 		
 		//FavoriteTutor(driver);
 		
 		//listofTopRatedTeachers(driver);
+		
+		searchTutor(driver);
+	}
+	
+	public static void searchTutor(WebDriver driver) {
+		
+		SearchTutor obj = new SearchTutor();
+		
+		//obj.searchByGender(driver);
+		
+		obj.searchByBoard(driver);
+		
+		obj.clickSearchButton(driver);
+		
+		//obj.clearFilter(driver);
 	}
 	
 	public static void findTutor(WebDriver driver) {
