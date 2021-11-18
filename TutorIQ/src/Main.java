@@ -23,9 +23,18 @@ public class Main {
 		
 		sleep();
 		
-		FavoriteTutor(driver);
+		findTutor(driver);
+		
+		//FavoriteTutor(driver);
 		
 		//listofTopRatedTeachers(driver);
+	}
+	
+	public static void findTutor(WebDriver driver) {
+		
+		FindTutor obj = new FindTutor();
+		
+		obj.searchByFee(driver);
 	}
 	
 	public static void loginFunctionality(WebDriver driver){

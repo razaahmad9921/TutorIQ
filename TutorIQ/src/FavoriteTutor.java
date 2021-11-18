@@ -95,7 +95,7 @@ public class FavoriteTutor {
 
 			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 			
-			System.out.println(randomNum);
+		
 
 			list.get(randomNum).findElement(By.cssSelector("a.btn")).click();
 
