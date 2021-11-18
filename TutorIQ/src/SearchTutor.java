@@ -42,11 +42,13 @@ public class SearchTutor {
 
 		list.get(randomNum).click();
 		
-		driver.findElement(By.xpath("//input[@placeholder='Select Categories']")).click();
+		//from here i have to add the 2nd field as well for that i have to learn about this 
 		
-		randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
-		
-		list.get(randomNum).click();
+//		driver.findElement(By.xpath("//input[@placeholder='Select Categories']")).click();
+//		
+//		randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+//		
+//		list.get(randomNum).click();
 		
 		sleep(4500);
 
