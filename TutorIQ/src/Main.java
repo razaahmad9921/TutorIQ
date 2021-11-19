@@ -15,7 +15,9 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
+		
+		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
@@ -27,7 +29,7 @@ public class Main {
 
 		//topRatedStudentAndTeacher(driver);
 
-		sleep();
+		sleep(2500);
 
 		//findTutor(driver);
 
@@ -42,37 +44,8 @@ public class Main {
 
 		SearchTutorInFindTutor obj = new SearchTutorInFindTutor();
 
-		obj.searchByGender(driver);
-
-		obj.searchByBoard(driver);
-
-		obj.searchByClass(driver);
-
-		obj.searchBySubject(driver);
-
-		obj.searchByMinimumFee(driver);
-
-		obj.searchByMaximumFee(driver);
-		
-		obj.searchByInstitutes(driver);
-		
-		obj.searchByExperience(driver);
-		
-		obj.searchByAge(driver);
-		
-		obj.searchByLocation(driver);
-		
-		obj.searchByTutorName(driver);
-		
-		obj.searchByTutorChannel(driver);
-		
-		obj.clickSearchButton(driver);
-
-
-
-
-
-		//obj.clearFilter(driver);
+		obj.searchByEachField(driver);
+	
 	}
 
 	public static void findTutor(WebDriver driver) {
@@ -124,10 +97,10 @@ public class Main {
 		obj.getAllFavoriteTutor(driver);
 	}
 
-	private static void sleep() {
+	private static void sleep(int i) {
 
 		try {
-			Thread.sleep(2500);
+			Thread.sleep(i);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
