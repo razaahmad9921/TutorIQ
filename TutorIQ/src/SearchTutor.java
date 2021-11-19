@@ -4,6 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public class SearchTutor {
 
@@ -30,32 +31,196 @@ public class SearchTutor {
 
 	public void searchByBoard(WebDriver driver) {
 
-		System.out.println("dinka");
+
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@name='categories[]']"));
+
+		Select dd = new Select(dropDown);
 		
-		driver.findElement(By.xpath("//input[@placeholder='Select Categories']")).click();
-
-		WebElement element = driver.findElement(By.xpath("//ul[@id='select2-categories-results']"));
-
-		List<WebElement> list = element.findElements(By.tagName("li"));
+		List<WebElement> list = dd.getOptions();
 
 		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 
-		list.get(randomNum).click();
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchByClass(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@id='class']"));
+
+		Select dd = new Select(dropDown);
 		
-		//from here i have to add the 2nd field as well for that i have to learn about this 
+		List<WebElement> list = dd.getOptions();
+
+		int randomNum = ThreadLocalRandom.current().nextInt(1, list.size());
 		
-//		driver.findElement(By.xpath("//input[@placeholder='Select Categories']")).click();
-//		
-//		randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
-//		
-//		list.get(randomNum).click();
+		System.out.println(randomNum);
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchBySubject(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@id='subjects']"));
+
+		Select dd = new Select(dropDown);
 		
-		sleep(4500);
+		List<WebElement> list = dd.getOptions();
+
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchByMinimumFee(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@id='minimum_fee']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+		
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchByMaximumFee(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@id='maximum_fee']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+		
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(3000);
+
+	}
+
+	public void searchByInstitutes(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@name='insts[]']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+		
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchByExperience(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@id='experience']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+		
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchByAge(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@id='age']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+		
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchByLocation(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@name='locations[]']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+		
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	public void searchByQualification(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@name='locations[]']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+		
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
+
+	}
+	
+	
+	public void searchByTutorName(WebDriver driver) {
+		
+		driver.findElement(By.xpath("//input[@id='qual_name']")).sendKeys("Raza Ahmad");
+		
+		sleep(1500);
+		
+		driver.findElement(By.xpath("//button[@class='btn-search']")).click();
+	}
+	
+	public void searchByTutorChannel(WebDriver driver) {
+
+		WebElement dropDown = driver.findElement(By.xpath("//select[@name='suitable_timings']"));
+
+		Select dd = new Select(dropDown);
+		
+		List<WebElement> list = dd.getOptions();
+
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		
+		dd.selectByIndex(randomNum);
+
+		sleep(1500);
 
 	}
 	
 	public void clickSearchButton(WebDriver driver) {
-		
+
 		driver.findElement(By.cssSelector("div.button-hold")).click();
 
 		sleep(8000);
