@@ -2,6 +2,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import findTutor.FindTutor;
+import findTutor.RecomendedAndRatedTeacher;
+import findTutor.SearchTutorInFindTutor;
+import loginSignOut.Login;
+import signUp.SignUp;
+
 public class Main {
 
 
@@ -34,7 +40,7 @@ public class Main {
 
 	public static void searchTutor(WebDriver driver) {
 
-		SearchTutor obj = new SearchTutor();
+		SearchTutorInFindTutor obj = new SearchTutorInFindTutor();
 
 		obj.searchByGender(driver);
 
@@ -99,14 +105,14 @@ public class Main {
 
 	public static void topRatedStudentAndTeacher(WebDriver driver) {
 
-		TopRatedStudentAndTeacher obj = new TopRatedStudentAndTeacher();
+		RecomendedAndRatedTeacher obj = new RecomendedAndRatedTeacher();
 
 		obj.selectRecomandedTeacherFromList(driver);
 	}
 
 	public static void listofTopRatedTeachers(WebDriver driver) {
 
-		TopRatedStudentAndTeacher obj = new TopRatedStudentAndTeacher();
+		RecomendedAndRatedTeacher obj = new RecomendedAndRatedTeacher();
 
 		obj.listOfAllRecomandedTeachers(driver);
 	}

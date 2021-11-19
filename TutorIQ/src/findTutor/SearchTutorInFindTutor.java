@@ -1,3 +1,4 @@
+package findTutor;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -6,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class SearchTutor {
+public class SearchTutorInFindTutor {
 
 	public void clearFilter(WebDriver driver) {
 

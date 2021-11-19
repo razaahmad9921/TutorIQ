@@ -1,10 +1,11 @@
+package findTutor;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class TopRatedStudentAndTeacher {
+public class RecomendedAndRatedTeacher {
 
 	
 	public void selectRecomandedTeacherFromList(WebDriver driver) {
