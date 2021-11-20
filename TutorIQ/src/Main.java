@@ -1,4 +1,4 @@
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -25,19 +25,14 @@ public class Main {
 
 		driver.get("https://tutorsiq.com/");
 
-		loginFunctionality(driver);
+		signUpFunctionality(driver);
 
-		//topRatedStudentAndTeacher(driver);
+
 
 		sleep(2500);
 
-		//findTutor(driver);
 
-		//FavoriteTutor(driver);
-
-		//listofTopRatedTeachers(driver);
-
-		searchTutor(driver);
+		//searchTutor(driver);
 	}
 
 	public static void searchTutor(WebDriver driver) {
