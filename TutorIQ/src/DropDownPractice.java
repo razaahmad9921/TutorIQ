@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -7,6 +8,29 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class DropDownPractice {
+	
+	public void autoSuggestiveDropDown(WebDriver driver) {
+		
+		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
+
+		driver.findElement(By.id("autosuggest")).sendKeys("Pa");
+		
+		sleep();
+		
+		WebElement element = driver.findElement(By.xpath("//ul[@id='ui-id-1']"));
+		
+		List <WebElement> list = element.findElements(By.tagName("li"));
+		
+		for (WebElement webElement : list) {
+			
+			if (webElement.getText().equalsIgnoreCase("Pakistan")) {
+				
+				webElement.click();
+				
+				break;
+			}
+		}
+	}
 
 	public void clickingDropDownIncreasingNumberRahulShetty(WebDriver driver) {
 
