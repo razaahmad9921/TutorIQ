@@ -50,6 +50,10 @@ public class StudentProfile {
 		selectGrade(driver);
 		
 		selectSubject(driver);
+		
+		sleep(2000);
+		
+		gradeAndSubject(driver);
 	}
 
 	private void selectStudents(WebDriver driver) {
@@ -124,8 +128,6 @@ public class StudentProfile {
 		
 		System.out.println("listSize:" + list.size());
 		
-		System.out.println("random number" + randomNum);
-		
 		if (randomNum == 0) {
 			
 			list.get(0).findElement(By.id("subjects_sac")).click();
@@ -137,11 +139,8 @@ public class StudentProfile {
 			
 			while(i <= randomNum) {
 				
-				System.out.println("While loop " + i);
 				list.get(i).findElement(By.id("subjects")).click();
-				
 				i++;
-				
 				sleep(400);
 			}
 		}
@@ -151,7 +150,25 @@ public class StudentProfile {
 		driver.findElement(By.cssSelector("div button[id$='add_grade_sub']")).click();
 	}
 	
+	public void gradeAndSubject(WebDriver driver) {
+		
+	//	driver.findElement(By.xpath("//span[@style='width: 578px;']")).click();
+		
+		WebElement element = driver.findElement(By.id("csm"));
+		
+		Select dd = new Select(element);
+		
+		List<WebElement> list = dd.getOptions();
 	
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+	
+		System.out.println("listSize:" + list.size());
+		
+		sleep(2000);
+		
+		dd.deselectByIndex(randomNum);
+		
+	}
 	
 	private static void sleep(int i) {
 
