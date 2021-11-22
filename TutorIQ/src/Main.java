@@ -1,14 +1,18 @@
 
 import java.sql.Driver;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import StudentProfile.StudentProfile;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
 import findTutor.SearchTutorInFindTutor;
 import loginSignOut.Login;
 import signUp.SignUp;
+
+
 
 public class Main {
 
@@ -27,23 +31,33 @@ public class Main {
 
 		driver.manage().window().maximize();
 		
+		driver.get("https://tutorsiq.com/");
+		
+		studentProfile(driver);
+		
 //		DropDownPractice obj = new DropDownPractice();
 //		
 //		obj.autoSuggestiveDropDown(driver);
-//		
-		
-	
-
-//		driver.get("https://tutorsiq.com/");
 //
 //		signUpFunctionality(driver);
-//
-//		sleep(2500);
 
-
-		//searchTutor(driver);
+//		searchTutor(driver);
 	}
+	
+	public static void studentProfile(WebDriver driver) {
+		
+		loginFunctionality(driver);
+		
+		sleep(2000);
+		
+		driver.findElement(By.xpath("//a[text()='Profile']")).click();
+		
+		StudentProfile objProfile = new StudentProfile();
 
+		objProfile.editProfile(driver);
+	}
+	
+	
 	public static void searchTutor(WebDriver driver) {
 
 		SearchTutorInFindTutor obj = new SearchTutorInFindTutor();
@@ -100,7 +114,7 @@ public class Main {
 
 		obj.getAllFavoriteTutor(driver);
 	}
-
+	
 	private static void sleep(int i) {
 
 		try {
@@ -110,5 +124,6 @@ public class Main {
 			e.printStackTrace();
 		}
 	}
+
 }
 
