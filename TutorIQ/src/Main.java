@@ -25,11 +25,7 @@ public class Main {
 
 		driver.manage().window().maximize();
 		
-//		DropDownPractice obj = new DropDownPractice();
-//		
-//		obj.autoSuggestiveDropDown(driver);
-//		
-		
+
 	
 
 		driver.get("https://tutorsiq.com/");
