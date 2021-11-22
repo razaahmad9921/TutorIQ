@@ -20,6 +20,8 @@ public class Main {
 		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
 		
 //		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
+		
+		
 
 		WebDriver driver = new ChromeDriver();
 
@@ -32,11 +34,11 @@ public class Main {
 		
 	
 
-		driver.get("https://tutorsiq.com/");
-
-		signUpFunctionality(driver);
-
-		sleep(2500);
+//		driver.get("https://tutorsiq.com/");
+//
+//		signUpFunctionality(driver);
+//
+//		sleep(2500);
 
 
 		//searchTutor(driver);
