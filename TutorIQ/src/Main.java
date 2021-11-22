@@ -17,9 +17,9 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-		//System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
