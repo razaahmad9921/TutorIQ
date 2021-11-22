@@ -1,4 +1,6 @@
 
+import java.sql.Driver;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,19 +17,24 @@ public class Main {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
-		//System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
 		
-		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
+		
+//		DropDownPractice obj = new DropDownPractice();
+//		
+//		obj.autoSuggestiveDropDown(driver);
+//		
+		
+	
 
 		driver.get("https://tutorsiq.com/");
 
 		signUpFunctionality(driver);
-
-
 
 		sleep(2500);
 
