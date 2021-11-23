@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+
 public class DropDownPractice {
 	
 	public void autoSuggestiveDropDown(WebDriver driver) {
