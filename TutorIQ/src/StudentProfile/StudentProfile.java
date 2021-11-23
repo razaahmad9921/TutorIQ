@@ -41,11 +41,11 @@ public class StudentProfile {
 
 		sleep(1000);
 
-//		selectStudents(driver);
-//		
-//		selectGender(driver);
+		selectStudents(driver);
 		
-//		selectBoard(driver);
+     	selectGender(driver);
+		
+    	selectBoard(driver);
 		
 		selectGrade(driver);
 		
