@@ -152,7 +152,7 @@ public class StudentProfile {
 	
 	public void gradeAndSubject(WebDriver driver) {
 		
-	//	driver.findElement(By.xpath("//span[@style='width: 578px;']")).click();
+	//	driver.findElement(By.xpath("//div[@class='grade_list']//span[@role='combobox']']")).click();
 		
 		WebElement element = driver.findElement(By.id("csm"));
 		
