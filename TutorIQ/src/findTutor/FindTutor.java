@@ -18,7 +18,7 @@ public class FindTutor {
 
 		List<WebElement> list = element.findElements(By.tagName("li"));
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size() + 1);
 
 		list.get(randomNum).click();
 
@@ -80,7 +80,7 @@ public class FindTutor {
 
 		if (list.size() >= 1) {
 
-			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size() + 1);
 
 
 

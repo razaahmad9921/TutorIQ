@@ -37,25 +37,48 @@ public class StudentProfile {
 
 	public void editProfile(WebDriver driver) {
 
-		driver.findElement(By.id("whatsapp_no")).sendKeys(mobileNumber());
+		
 
-		sleep(1000);
+		whatsAppNumber(driver);
 
 		selectStudents(driver);
-		
-     	selectGender(driver);
-		
-    	selectBoard(driver);
-		
+
+		selectGender(driver);
+
+		selectBoard(driver);
+
 		selectGrade(driver);
-		
+
 		selectSubject(driver);
-		
+
 		sleep(2000);
-		
+
 		gradeAndSubject(driver);
+
+		institues(driver);
+
+		gender(driver);
+
+		tutorChannel(driver);
+
+		country(driver);
+
+		address(driver);
+
+		commentsAboutUs(driver);
+		
+		updateProfile(driver);
 	}
 
+	private void whatsAppNumber(WebDriver driver) {
+		
+		System.out.println(driver.findElement(By.id("whatsapp_no")).getAttribute("value"));
+		
+		driver.findElement(By.id("whatsapp_no")).sendKeys(mobileNumber());
+		
+		sleep(1000);
+	}
+	
 	private void selectStudents(WebDriver driver) {
 
 		WebElement dropDown = driver.findElement(By.xpath("//select[@id='no_of_students']"));
@@ -69,7 +92,7 @@ public class StudentProfile {
 		dd.selectByIndex(randomNum);
 
 		sleep(1500);
-		
+
 	}
 
 	private void selectGender(WebDriver driver) {
@@ -101,7 +124,7 @@ public class StudentProfile {
 
 		sleep(1500);
 	}
-	
+
 	private void selectGrade(WebDriver driver) {
 
 		WebElement dropDown = driver.findElement(By.xpath("//select[@id='grade']"));
@@ -116,7 +139,7 @@ public class StudentProfile {
 
 		sleep(2500);
 	}
-	
+
 	private void selectSubject(WebDriver driver) {
 
 		WebElement dropDown = driver.findElement(By.xpath("//div[@id='subjects']"));
@@ -125,20 +148,20 @@ public class StudentProfile {
 		List<WebElement> list = dropDown.findElements(By.tagName("div"));
 
 		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
-		
+
 		System.out.println("listSize:" + list.size());
-		
+
 		if (randomNum == 0) {
-			
+
 			list.get(0).findElement(By.id("subjects_sac")).click();
-			
+
 		}
 		else {
-			
+
 			int i = 1;
-			
+
 			while(i <= randomNum) {
-				
+
 				list.get(i).findElement(By.id("subjects")).click();
 				i++;
 				sleep(400);
@@ -146,30 +169,236 @@ public class StudentProfile {
 		}
 
 		sleep(1500);
-		
+
 		driver.findElement(By.cssSelector("div button[id$='add_grade_sub']")).click();
 	}
-	
-	public void gradeAndSubject(WebDriver driver) {
-		
-	//	driver.findElement(By.xpath("//div[@class='grade_list']//span[@role='combobox']']")).click();
-		
+
+	private void gradeAndSubject(WebDriver driver) {
+
+		//	driver.findElement(By.xpath("//div[@class='grade_list']//span[@role='combobox']']")).click();
+
 		WebElement element = driver.findElement(By.id("csm"));
-		
+
 		Select dd = new Select(element);
-		
+
 		List<WebElement> list = dd.getOptions();
-	
+
 		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
-	
+
 		System.out.println("listSize:" + list.size());
-		
+
 		sleep(2000);
-		
+
 		dd.deselectByIndex(randomNum);
+
+	}
+
+	private void institues(WebDriver driver) {
+
+		WebElement element = driver.findElement(By.id("institutes"));
+
+		Select dd = new Select(element);
+
+		List<WebElement> list = dd.getOptions();
+
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(400);
+
+		randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(400);
+
+		randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(400);
+
+	}
+
+	private void gender(WebDriver driver) {
+
+		WebElement element = driver.findElement(By.id("tutor_gender"));
+
+		Select dd = new Select(element);
+
+		List<WebElement> list = dd.getOptions();
+
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(400);
+	}
+
+	private void tutorChannel(WebDriver driver) {
+
+		WebElement element = driver.findElement(By.id("tutoring_channel"));
+
+		Select dd = new Select(element);
+
+		List<WebElement> list = dd.getOptions();
+
+		int randomNum = ThreadLocalRandom.current().nextInt(1, list.size());
+
+		dd.selectByIndex(randomNum);
+
+		sleep(400);
+	}
+
+	private void country(WebDriver driver) {
+
+		driver.findElement(By.xpath("//span[@id='select2-country-container']")).click();
+
+		sleep(400);
+
+		int randomNum = ThreadLocalRandom.current().nextInt(1, 3);
 		
+		System.out.println(randomNum);
+
+		if (randomNum == 1) {
+
+			driver.findElement(By.xpath("//input[@tabindex='0']")).sendKeys("Onl");
+
+			WebElement element = driver.findElement(By.xpath("//ul[@id='select2-country-results']"));
+
+			List<WebElement> list = element.findElements(By.tagName("li"));
+
+			for (WebElement li : list) {
+
+				System.out.println(li.getText());
+
+				if (li.getText().equalsIgnoreCase("Online")) {
+
+					li.click();
+
+				}
+			}
+
+		}else {
+
+			driver.findElement(By.xpath("//input[@tabindex='0']")).sendKeys("Pak");
+
+			WebElement element = driver.findElement(By.xpath("//ul[@id='select2-country-results']"));
+
+			List<WebElement> list = element.findElements(By.tagName("li"));
+
+			for (WebElement li : list) {
+
+				System.out.println(li.getText());
+
+				if (li.getText().equalsIgnoreCase("Pakistan")) {
+
+					li.click();
+
+					city(driver);
+					
+					location(driver);
+				}
+			}
+		}
+
+
+		sleep(400);
+	}
+
+	private void city(WebDriver driver) {
+
+		driver.findElement(By.xpath("//span[@id='select2-city-container']")).click();
+
+		sleep(400);
+
+		driver.findElement(By.xpath("//input[@tabindex='0']")).sendKeys("Lah");
+
+		WebElement element = driver.findElement(By.xpath("//ul[@id='select2-city-results']"));
+
+		List<WebElement> list = element.findElements(By.tagName("li"));
+
+		for (WebElement li : list) {
+
+			if (li.getText().equals("Lahore")) {
+
+				li.click();
+			}
+		}
+
+
 	}
 	
+	private static void location(WebDriver driver) {
+		
+	
+		int toss = ThreadLocalRandom.current().nextInt(1, 3);
+		
+		if (toss == 1) {
+			
+			WebElement element = driver.findElement(By.id("location"));
+			
+			Select dd = new Select(element);
+			
+			List <WebElement> list = dd.getOptions();
+			
+			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+			
+			dd.selectByIndex(randomNum);
+			
+		}
+		else {
+			
+			driver.findElement(By.xpath("//span[@id ='select2-location-container']")).click();
+			
+			driver.findElement(By.cssSelector("input.select2-search__field[tabindex='0']")).sendKeys("shad");
+			
+			WebElement element = driver.findElement(By.xpath("//ul[@id='select2-location-results']"));
+
+			List<WebElement> list = element.findElements(By.tagName("li"));
+
+			for (WebElement li : list) {
+
+				System.out.println(li.getText());
+
+				if (li.getText().equalsIgnoreCase("shadbagh")) {
+
+					li.click();
+
+					break;
+				}
+			}
+			
+			
+		}
+		
+		sleep(2000);
+	}
+	
+	private void updateProfile(WebDriver driver) {
+		
+		driver.findElement(By.id("update_student_profile")).click();
+	}
+	
+	private static void address(WebDriver driver) {
+
+		driver.findElement(By.xpath("//textarea[@id='address']")).sendKeys("House # 32 A/B Dilawar Road Chah Miran, Lahore");
+
+		sleep(2000);
+	}
+	
+
+
+	private static void commentsAboutUs(WebDriver driver) {
+
+		driver.findElement(By.xpath("//textarea[@id='comments']")).sendKeys("Bohat e chawal web banwai hai ");
+
+		sleep(2000);
+
+	}
+
+
 	private static void sleep(int i) {
 
 		try {

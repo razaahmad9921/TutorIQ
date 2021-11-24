@@ -1,5 +1,6 @@
 
 import java.sql.Driver;
+import java.util.concurrent.ThreadLocalRandom;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,6 +35,8 @@ public class Main {
 		driver.get("https://tutorsiq.com/");
 		
 		studentProfile(driver);
+		
+		//studentProfile(driver);
 		
 //		DropDownPractice obj = new DropDownPractice();
 //		
@@ -78,8 +81,6 @@ public class Main {
 		Login obj = new Login();
 
 		obj.login(driver);
-
-
 
 		//		obj.wrongLogin(driver);
 		//		
