@@ -47,7 +47,7 @@ public class Login {
 	
 	public void forgotPassword(WebDriver driver) {
 		
-		driver.findElement(By.xpath("/html/body/header/nav/div/ul/li[5]")).click();
+		driver.findElement(By.xpath("//a[@class='forgot-pass-link']")).click();
 
 		sleep(1500);
 		

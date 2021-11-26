@@ -1,9 +1,15 @@
 
 import java.sql.Driver;
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+import javax.lang.model.element.Element;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import StudentProfile.StudentProfile;
@@ -23,50 +29,48 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
-		
-//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
-		
-		
+
+		//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
 
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
-		
-		driver.get("https://tutorsiq.com/");
-		
-		studentProfile(driver);
-		
-		//studentProfile(driver);
-		
-//		DropDownPractice obj = new DropDownPractice();
-//		
-//		obj.autoSuggestiveDropDown(driver);
-//
-//		signUpFunctionality(driver);
 
-//		searchTutor(driver);
+		driver.get("https://tutorsiq.com/");
+
+		studentProfile(driver);
+
+		//studentProfile(driver);
+
+		//		DropDownPractice obj = new DropDownPractice();
+		//		
+		//		obj.autoSuggestiveDropDown(driver);
+		//
+		//		signUpFunctionality(driver);
+
+		//		searchTutor(driver);
 	}
-	
+
 	public static void studentProfile(WebDriver driver) {
-		
+
 		loginFunctionality(driver);
-		
+
 		sleep(2000);
-		
+
 		driver.findElement(By.xpath("//a[text()='Profile']")).click();
-		
+
 		StudentProfile objProfile = new StudentProfile();
 
 		objProfile.editProfile(driver);
 	}
-	
-	
+
+
 	public static void searchTutor(WebDriver driver) {
 
 		SearchTutorInFindTutor obj = new SearchTutorInFindTutor();
 
 		obj.searchByEachField(driver);
-	
+
 	}
 
 	public static void findTutor(WebDriver driver) {
@@ -115,7 +119,7 @@ public class Main {
 
 		obj.getAllFavoriteTutor(driver);
 	}
-	
+
 	private static void sleep(int i) {
 
 		try {
