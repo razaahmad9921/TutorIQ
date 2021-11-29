@@ -9,10 +9,13 @@ import java.util.regex.Pattern;
 import org.checkerframework.framework.qual.LiteralKind;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Sleeper;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class StudentProfile {
 
@@ -37,27 +40,27 @@ public class StudentProfile {
 
 	public void editProfile(WebDriver driver) {
 
-		whatsAppNumber(driver);
-
-		selectStudents(driver);
-		
+//		whatsAppNumber(driver);
+//
+//		selectStudents(driver);
+//		
 		studentGender(driver);
 	
-		selectBoard(driver);
-
-		gradeAndSubject(driver);
-
-		institues(driver);
-
-		teacherGender(driver);
-
-		tutorChannel(driver);
-
-		country(driver);
-
-		address(driver);
-
-		commentsAboutUs(driver);
+//		selectBoard(driver);
+//
+//		gradeAndSubject(driver);
+//
+//		institues(driver);
+//
+//		teacherGender(driver);
+//
+//		tutorChannel(driver);
+//
+//		country(driver);
+//
+//		address(driver);
+//
+//		commentsAboutUs(driver);
 
 		updateProfile(driver);
 	}
@@ -109,7 +112,7 @@ public class StudentProfile {
 
 		int randomNum = ThreadLocalRandom.current().nextInt(1, list.size());
 
-		dd.selectByIndex(randomNum);
+		dd.selectByIndex(0);
 
 		sleep(1500);
 	}
@@ -418,6 +421,16 @@ public class StudentProfile {
 	private void updateProfile(WebDriver driver) {
 
 		driver.findElement(By.id("update_student_profile")).click();
+		
+		sleep(500); 
+		
+		WebElement ele = driver.findElement(By.id("whatsapp_no"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+        
+		Boolean isValidInput = (Boolean)js.executeScript("return arguments[0].checkValidity();", ele);
+		System.out.println(isValidInput);
+		String validationMessage = (String)js.executeScript("return arguments[0].validationMessage;", ele);
+		System.out.println(validationMessage);
 		
 	
 	}

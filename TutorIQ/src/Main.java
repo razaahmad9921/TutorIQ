@@ -13,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import StudentProfile.StudentProfile;
+import TutorForMe.TutorForMe;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
 import findTutor.SearchTutorInFindTutor;
@@ -37,18 +38,36 @@ public class Main {
 		driver.manage().window().maximize();
 
 		driver.get("https://tutorsiq.com/");
-
+		
 		studentProfile(driver);
+		
+//		FavoriteTutor(driver);
+
+		//tutorForMe(driver);
 
 		//studentProfile(driver);
 
-		//		DropDownPractice obj = new DropDownPractice();
-		//		
-		//		obj.autoSuggestiveDropDown(driver);
-		//
-		//		signUpFunctionality(driver);
+		//searchTutor(driver);
 
-		//		searchTutor(driver);
+//		DropDownPractice obj = new DropDownPractice();
+//
+//		obj.autoSuggestiveDropDown(driver);
+
+	}
+
+	public static void tutorForMe(WebDriver driver) {
+
+		loginFunctionality(driver);
+
+		sleep(2000);
+
+		driver.findElement(By.xpath("//a[text()='Tutors For Me']")).click();
+
+		TutorForMe  obj = new  TutorForMe();
+
+		obj.listOfAvailableTeacher(driver);
+
+
 	}
 
 	public static void studentProfile(WebDriver driver) {
@@ -115,6 +134,10 @@ public class Main {
 
 	public static void FavoriteTutor(WebDriver driver) {
 
+		loginFunctionality(driver);
+		
+		sleep(2000);
+		
 		FavoriteTutor obj = new FavoriteTutor();
 
 		obj.getAllFavoriteTutor(driver);
