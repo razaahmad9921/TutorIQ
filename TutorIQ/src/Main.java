@@ -13,18 +13,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import StudentProfile.StudentProfile;
-import TutorForMe.TutorForMe;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
 import findTutor.SearchTutorInFindTutor;
 import loginSignOut.Login;
 import signUp.SignUp;
+import tutorForMe.TutorForMe;
 
 
 
 public class Main {
 
-
+ 
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -66,8 +66,6 @@ public class Main {
 		TutorForMe  obj = new  TutorForMe();
 
 		obj.listOfAvailableTeacher(driver);
-
-
 	}
 
 	public static void studentProfile(WebDriver driver) {
