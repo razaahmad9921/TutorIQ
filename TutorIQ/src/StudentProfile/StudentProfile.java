@@ -40,34 +40,34 @@ public class StudentProfile {
 
 	public void editProfile(WebDriver driver) {
 
-//		whatsAppNumber(driver);
-//
-//		selectStudents(driver);
-//		
+		whatsAppNumber(driver);
+		
+		selectStudents(driver);
+		
 		studentGender(driver);
+
+		selectBoard(driver);
+		
+		gradeAndSubject(driver);
+		
+		institues(driver);
+		
+		teacherGender(driver);
+		
+		tutorChannel(driver);
+		
+		country(driver);
 	
-//		selectBoard(driver);
-//
-//		gradeAndSubject(driver);
-//
-//		institues(driver);
-//
-//		teacherGender(driver);
-//
-//		tutorChannel(driver);
-//
-//		country(driver);
-//
-//		address(driver);
-//
-//		commentsAboutUs(driver);
+		address(driver);
+		
+		commentsAboutUs(driver);
 
 		updateProfile(driver);
 	}
 
 	private void whatsAppNumber(WebDriver driver) {
 
-	
+
 
 		sleep(2000);
 
@@ -102,6 +102,20 @@ public class StudentProfile {
 
 	}
 
+	private  void validateSelectStudent(WebDriver driver) {
+
+		WebElement ele = driver.findElement(By.xpath("//select[@id='no_of_students']"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			selectStudents(driver);
+			
+			updateProfile(driver);
+		}
+
+	}
+
 	private void studentGender(WebDriver driver) {
 
 		WebElement dropDown = driver.findElement(By.xpath("//select[@id='student_gender']"));
@@ -112,10 +126,25 @@ public class StudentProfile {
 
 		int randomNum = ThreadLocalRandom.current().nextInt(1, list.size());
 
-		dd.selectByIndex(0);
+		dd.selectByIndex(randomNum);
 
 		sleep(1500);
 	}
+	
+	private  void validateStudentGender(WebDriver driver) {
+
+		WebElement ele = driver.findElement(By.xpath("//select[@id='student_gender']"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			studentGender(driver);
+			
+			updateProfile(driver);
+		}
+
+	}
+
 
 	private void selectBoard(WebDriver driver) {
 
@@ -130,6 +159,20 @@ public class StudentProfile {
 		dd.selectByIndex(randomNum);
 
 		sleep(1500);
+	}
+	
+	private  void validateSelectBoard(WebDriver driver) {
+
+		WebElement ele = driver.findElement(By.xpath("//select[@id='board']"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			selectBoard(driver);
+			
+			updateProfile(driver);
+		}
+
 	}
 
 	private void selectGrade(WebDriver driver) {
@@ -146,7 +189,7 @@ public class StudentProfile {
 
 		sleep(2500);
 	}
-
+	
 	private void selectSubject(WebDriver driver) {
 
 		WebElement dropDown = driver.findElement(By.xpath("//div[@id='subjects']"));
@@ -155,7 +198,7 @@ public class StudentProfile {
 
 		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 
-		
+
 
 		if (randomNum == 0) {
 
@@ -178,6 +221,7 @@ public class StudentProfile {
 
 		driver.findElement(By.cssSelector("div button[id$='add_grade_sub']")).click();
 	}
+	
 
 	private void gradeAndSubject(WebDriver driver) {
 
@@ -189,7 +233,7 @@ public class StudentProfile {
 		List<WebElement> list = dd.getOptions();
 
 		if (list.size() == 0) {
-			
+
 			selectGrade(driver);
 
 			selectSubject(driver);
@@ -205,31 +249,39 @@ public class StudentProfile {
 			dd.deselectByIndex(randomNum);
 		}
 
-
 	}
 
+	private  void validateGradeAndSubject(WebDriver driver) {
+
+		WebElement ele = driver.findElement(By.id("csm"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			gradeAndSubject(driver);
+			
+			updateProfile(driver);
+		}
+
+	}
+	
 	private void institues(WebDriver driver) {
 
-		
+
 		WebElement insitutesSelected = driver.findElement(By.xpath("//ul[@class='select2-selection__rendered']/ancestor::div[@class='col-md-6']"));
 
 		List<WebElement> insitutesSelectedList = insitutesSelected.findElements(By.tagName("li"));
-		
-		for (WebElement element : insitutesSelectedList) {
-			
-			System.out.println(element.getText());
-		}
-		
+
 		if (insitutesSelectedList.size() == 1) {
-			
-			System.out.println("dinka Chika");
-			
+
+		
+
 			WebElement element = driver.findElement(By.id("institutes"));
 
 			Select dd = new Select(element);
 
 			List<WebElement> list = dd.getOptions();
-			
+
 
 			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 
@@ -250,16 +302,16 @@ public class StudentProfile {
 			sleep(400);
 		}
 		else {
+
 			
-			System.out.println("dinka Chika");
-			
+
 			WebElement element = driver.findElement(By.id("institutes"));
 
 			Select dd = new Select(element);
 
 			List<WebElement> list = dd.getOptions();
-			
-			
+
+
 			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 
 			dd.deselectByIndex(randomNum);
@@ -282,6 +334,20 @@ public class StudentProfile {
 
 		sleep(400);
 	}
+	
+	private  void validateTeacherGender(WebDriver driver) {
+
+		WebElement ele = driver.findElement(By.id("tutor_gender"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			teacherGender(driver);
+			
+			updateProfile(driver);
+		}
+
+	}
 
 	private void tutorChannel(WebDriver driver) {
 
@@ -297,17 +363,27 @@ public class StudentProfile {
 
 		sleep(400);
 	}
+	
+	private  void validateTutorChannel(WebDriver driver) {
+
+		WebElement ele = driver.findElement(By.id("tutoring_channel"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			tutorChannel(driver);
+			
+			updateProfile(driver);
+		}
+
+	}
 
 	private void country(WebDriver driver) {
 
 		driver.findElement(By.xpath("//span[@id='select2-country-container']")).click();
 
 		sleep(400);
-
 		int randomNum = ThreadLocalRandom.current().nextInt(1, 3);
-
-		
-
 		if (randomNum == 1) {
 
 			driver.findElement(By.xpath("//input[@tabindex='0']")).sendKeys("Onl");
@@ -318,7 +394,7 @@ public class StudentProfile {
 
 			for (WebElement li : list) {
 
-			
+
 
 				if (li.getText().equalsIgnoreCase("Online")) {
 
@@ -327,7 +403,8 @@ public class StudentProfile {
 				}
 			}
 
-		}else {
+		}
+		else {
 
 			driver.findElement(By.xpath("//input[@tabindex='0']")).sendKeys("Pak");
 
@@ -337,7 +414,7 @@ public class StudentProfile {
 
 			for (WebElement li : list) {
 
-				
+
 				if (li.getText().equalsIgnoreCase("Pakistan")) {
 
 					li.click();
@@ -353,6 +430,22 @@ public class StudentProfile {
 		sleep(400);
 	}
 
+	private  void validateCountry(WebDriver driver) {
+
+		System.out.println("inside the function validate");
+		
+		WebElement ele = driver.findElement(By.id("country"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			country(driver);
+			
+			updateProfile(driver);
+		}
+
+	}
+	
 	private void city(WebDriver driver) {
 
 		driver.findElement(By.xpath("//span[@id='select2-city-container']")).click();
@@ -373,9 +466,21 @@ public class StudentProfile {
 			}
 		}
 
-
 	}
 
+	private  void validateCity(WebDriver driver) {
+
+		WebElement ele = driver.findElement(By.id("city"));
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			city(driver);
+			
+			updateProfile(driver);
+		}
+
+	}
 	private static void location(WebDriver driver) {
 
 
@@ -418,21 +523,18 @@ public class StudentProfile {
 		sleep(2000);
 	}
 
-	private void updateProfile(WebDriver driver) {
+	private  void validateLocation(WebDriver driver) {
 
-		driver.findElement(By.id("update_student_profile")).click();
-		
-		sleep(500); 
-		
-		WebElement ele = driver.findElement(By.id("whatsapp_no"));
+		WebElement ele = driver.findElement(By.id("location"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-        
-		Boolean isValidInput = (Boolean)js.executeScript("return arguments[0].checkValidity();", ele);
-		System.out.println(isValidInput);
-		String validationMessage = (String)js.executeScript("return arguments[0].validationMessage;", ele);
-		System.out.println(validationMessage);
 		
-	
+		if ((Boolean)js.executeScript("return arguments[0].checkValidity();", ele).equals(false)) {
+			
+			location(driver);
+			
+			updateProfile(driver);
+		}
+
 	}
 
 	private static void address(WebDriver driver) {
@@ -473,6 +575,36 @@ public class StudentProfile {
 
 	}
 
+	private void validateTextField(WebDriver driver) {
+
+		validateStudentGender(driver);
+	}
+
+	private void updateProfile(WebDriver driver) {
+
+		driver.findElement(By.id("update_student_profile")).click();
+
+		sleep(500); 
+		
+		validateSelectStudent(driver); 
+
+		validateStudentGender(driver);
+		
+		validateSelectBoard(driver);
+		
+		validateGradeAndSubject(driver);
+		
+		validateTeacherGender(driver);
+		
+		validateTutorChannel(driver);
+		
+		validateCountry(driver);
+		
+		validateCity(driver);
+		
+		validateLocation(driver);
+
+	}
 
 	private static void sleep(int i) {
 
