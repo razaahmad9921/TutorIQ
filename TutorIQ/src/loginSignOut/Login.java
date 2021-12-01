@@ -22,9 +22,9 @@ public class Login {
 		
 		String password = "4303921Ee";
 
-		driver.findElement(By.cssSelector("input.form-control")).sendKeys(email);
+		driver.findElement(By.cssSelector("input.form-control")).sendKeys(emailMain);
 
-		driver.findElement(By.id("password")).sendKeys(password);
+		driver.findElement(By.id("password")).sendKeys(passwordMain);
 
 		driver.findElement(By.cssSelector("button.btn")).click();
 

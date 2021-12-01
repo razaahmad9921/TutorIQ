@@ -60,7 +60,7 @@ public class StudentProfile {
 	
 		address(driver);
 		
-		commentsAboutUs(driver);
+		commentsAboutUs(driver); 
 
 		updateProfile(driver);
 	}
@@ -398,7 +398,7 @@ public class StudentProfile {
 
 				if (li.getText().equalsIgnoreCase("Online")) {
 
-					li.click();
+					li.click(); 
 
 				}
 			}

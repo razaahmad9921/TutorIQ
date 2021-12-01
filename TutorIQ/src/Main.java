@@ -16,6 +16,7 @@ import StudentProfile.StudentProfile;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
 import findTutor.SearchTutorInFindTutor;
+import helpMeFindTutor.HelpMeFindTutor;
 import loginSignOut.Login;
 import signUp.SignUp;
 import tutorForMe.TutorForMe;
@@ -39,7 +40,9 @@ public class Main {
 
 		driver.get("https://tutorsiq.com/");
 		
-		studentProfile(driver);
+		helpMeFindTutor(driver);
+		
+	//	studentProfile(driver);
 		
 //		FavoriteTutor(driver);
 
@@ -55,6 +58,19 @@ public class Main {
 
 	}
 
+	public static void helpMeFindTutor(WebDriver driver) {
+		
+
+		loginFunctionality(driver);
+
+		sleep(2000);
+
+		driver.findElement(By.xpath("//a[text()='Help Me To Find Tutor']")).click();
+		
+		HelpMeFindTutor obj = new HelpMeFindTutor();
+		
+		obj.findTutor(driver);
+	}
 	public static void tutorForMe(WebDriver driver) {
 
 		loginFunctionality(driver);
