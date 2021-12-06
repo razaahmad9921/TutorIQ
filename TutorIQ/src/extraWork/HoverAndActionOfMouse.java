@@ -14,8 +14,7 @@ import org.testng.annotations.Test;
 
 public class HoverAndActionOfMouse {
 
-	
-	@Test
+
 	public void example(WebDriver driver) {
 		
 		driver.get("https://prezentar.net/Welcome");

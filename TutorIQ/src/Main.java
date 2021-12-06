@@ -19,6 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import StudentProfile.StudentProfile;
 import extraWork.DropDownPractice;
 import extraWork.FrameWithDragDrop;
+import extraWork.GettingLinksInWebPage;
 import extraWork.HoverAndActionOfMouse;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
@@ -45,36 +46,9 @@ public class Main {
 
 		driver.manage().window().maximize();
 		
-		FrameWithDragDrop obj = new FrameWithDragDrop();
+		GettingLinksInWebPage obj = new GettingLinksInWebPage();
 		
-		
-		
-		
-		
-		obj.frameWork(driver);
-
-//		driver.get("https://tutorsiq.com/");
-		
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		
-		
-	//	helpMeFindTutor(driver);
-		
-	//	studentProfile(driver);
-		
-//		FavoriteTutor(driver);
-
-		//tutorForMe(driver);
-
-		//studentProfile(driver);
-
-		//searchTutor(driver);
-
-//		DropDownPractice obj = new DropDownPractice();
-//
-//		obj.autoSuggestiveDropDown(driver);
+		obj.getAllLinks(driver);
 
 	}
 
