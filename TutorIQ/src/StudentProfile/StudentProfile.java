@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class StudentProfile {
 
-
+	
 	private String mobileNumber() {
 
 		String countryCode = "+92";
@@ -69,7 +69,7 @@ public class StudentProfile {
 
 
 
-		sleep(2000);
+//		sleep(2000);
 
 		if (driver.findElement(By.id("whatsapp_no")).getAttribute("value") == "") {
 
@@ -83,7 +83,7 @@ public class StudentProfile {
 		}
 
 
-		sleep(1000);
+//		sleep(1000);
 	}
 
 	private void selectStudents(WebDriver driver) {
@@ -98,7 +98,7 @@ public class StudentProfile {
 
 		dd.selectByIndex(randomNum);
 
-		sleep(1500);
+//		sleep(1500);
 
 	}
 
@@ -128,7 +128,7 @@ public class StudentProfile {
 
 		dd.selectByIndex(randomNum);
 
-		sleep(1500);
+//		sleep(1500);
 	}
 	
 	private  void validateStudentGender(WebDriver driver) {
@@ -158,7 +158,7 @@ public class StudentProfile {
 
 		dd.selectByIndex(randomNum);
 
-		sleep(1500);
+//		sleep(1500);
 	}
 	
 	private  void validateSelectBoard(WebDriver driver) {
@@ -187,7 +187,7 @@ public class StudentProfile {
 
 		dd.selectByIndex(randomNum);
 
-		sleep(2500);
+//		sleep(2500);
 	}
 	
 	private void selectSubject(WebDriver driver) {
@@ -213,11 +213,11 @@ public class StudentProfile {
 
 				list.get(i).findElement(By.id("subjects")).click();
 				i++;
-				sleep(400);
+//				sleep(400);
 			}
 		}
 
-		sleep(1500);
+//		sleep(1500);
 
 		driver.findElement(By.cssSelector("div button[id$='add_grade_sub']")).click();
 	}
@@ -238,13 +238,13 @@ public class StudentProfile {
 
 			selectSubject(driver);
 
-			sleep(2000);
+//			sleep(2000);
 		}
 		else {
 
 			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 
-			sleep(2000);
+//			sleep(2000);
 
 			dd.deselectByIndex(randomNum);
 		}
@@ -287,19 +287,19 @@ public class StudentProfile {
 
 			dd.selectByIndex(randomNum);
 
-			sleep(400);
+//			sleep(400);
 
 			randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 
 			dd.selectByIndex(randomNum);
 
-			sleep(400);
+//			sleep(400);
 
 			randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
 
 			dd.selectByIndex(randomNum);
 
-			sleep(400);
+//			sleep(400);
 		}
 		else {
 
@@ -332,7 +332,7 @@ public class StudentProfile {
 
 		dd.selectByIndex(randomNum);
 
-		sleep(400);
+//		sleep(400);
 	}
 	
 	private  void validateTeacherGender(WebDriver driver) {
@@ -361,7 +361,7 @@ public class StudentProfile {
 
 		dd.selectByIndex(randomNum);
 
-		sleep(400);
+//		sleep(400);
 	}
 	
 	private  void validateTutorChannel(WebDriver driver) {
@@ -382,7 +382,7 @@ public class StudentProfile {
 
 		driver.findElement(By.xpath("//span[@id='select2-country-container']")).click();
 
-		sleep(400);
+//		sleep(400);
 		int randomNum = ThreadLocalRandom.current().nextInt(1, 3);
 		if (randomNum == 1) {
 
@@ -427,7 +427,7 @@ public class StudentProfile {
 		}
 
 
-		sleep(400);
+//		sleep(400);
 	}
 
 	private  void validateCountry(WebDriver driver) {
@@ -450,7 +450,7 @@ public class StudentProfile {
 
 		driver.findElement(By.xpath("//span[@id='select2-city-container']")).click();
 
-		sleep(400);
+//		sleep(400);
 
 		driver.findElement(By.xpath("//input[@tabindex='0']")).sendKeys("Lah");
 
@@ -520,7 +520,7 @@ public class StudentProfile {
 			}
 		}
 
-		sleep(2000);
+//		sleep(2000);
 	}
 
 	private  void validateLocation(WebDriver driver) {
@@ -552,7 +552,7 @@ public class StudentProfile {
 		}
 
 
-		sleep(2000);
+//		sleep(2000);
 	}
 
 
@@ -571,7 +571,7 @@ public class StudentProfile {
 			driver.findElement(By.xpath("//textarea[@id='comments']")).sendKeys("Bohat e chawal web banwai hai");
 		}
 
-		sleep(2000);
+//		sleep(2000);
 
 	}
 
@@ -584,7 +584,7 @@ public class StudentProfile {
 
 		driver.findElement(By.id("update_student_profile")).click();
 
-		sleep(500); 
+//		sleep(500); 
 		
 		validateSelectStudent(driver); 
 

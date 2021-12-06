@@ -1,8 +1,10 @@
 
 import java.sql.Driver;
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.TimeUnit;
 
 import javax.lang.model.element.Element;
 
@@ -11,8 +13,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import StudentProfile.StudentProfile;
+import extraWork.DropDownPractice;
+import extraWork.FrameWithDragDrop;
+import extraWork.HoverAndActionOfMouse;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
 import findTutor.SearchTutorInFindTutor;
@@ -37,10 +44,23 @@ public class Main {
 		WebDriver driver = new ChromeDriver();
 
 		driver.manage().window().maximize();
-
-		driver.get("https://tutorsiq.com/");
 		
-		helpMeFindTutor(driver);
+		FrameWithDragDrop obj = new FrameWithDragDrop();
+		
+		
+		
+		
+		
+		obj.frameWork(driver);
+
+//		driver.get("https://tutorsiq.com/");
+		
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		
+	//	helpMeFindTutor(driver);
 		
 	//	studentProfile(driver);
 		

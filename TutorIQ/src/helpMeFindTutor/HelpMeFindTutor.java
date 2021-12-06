@@ -1,5 +1,6 @@
 package helpMeFindTutor;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -19,7 +20,9 @@ import io.netty.buffer.UnpooledByteBufAllocator;
 public class HelpMeFindTutor {
 
 	public void findTutor(WebDriver driver) {
-
+		
+		
+		
 		//	date(driver);
 
 		studentName(driver);
@@ -750,47 +753,37 @@ public class HelpMeFindTutor {
 	}
 
 	private void applyForTutor(WebDriver driver) {
-		
 
-
-		driver.findElement(By.id("apply_tuition_btn")).click();
-
-		sleep(2000);
-		
-		WebElement message = driver.findElement(By.xpath("//h3[text()='Your Request has been sent successfully.']"));
-		
-		
-		
-		if (message == null) {
-			 
-			validateDate(driver);
-
-			validateStudentName(driver);
-
-			validateContactNumber(driver);
-
-			validateSelectStudent(driver); 
-
-			validateStudentGender(driver);
-
-			validateSelectBoard(driver);
-
-			validateGradeAndSubject(driver);
-
-			validateTeacherGender(driver);
-
-			validateTutorChannel(driver);
-
-			validateCountry(driver);
-
-			validateCity(driver);
-
-			validateLocation(driver);
-			
-		}
+//		if (message == null) {
+//			 
+//			validateDate(driver);
+//
+//			validateStudentName(driver);
+//
+//			validateContactNumber(driver);
+//
+//			validateSelectStudent(driver); 
+//
+//			validateStudentGender(driver);
+//
+//			validateSelectBoard(driver);
+//
+//			validateGradeAndSubject(driver);
+//
+//			validateTeacherGender(driver);
+//
+//			validateTutorChannel(driver);
+//
+//			validateCountry(driver);
+//
+//			validateCity(driver);
+//
+//			validateLocation(driver);
+//			
+//		}
 
 	}
-
+	
 	private static void sleep(int i) {
 
 		try {
