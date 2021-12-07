@@ -79,7 +79,7 @@ public class FindTutor {
 //			driver.navigate().back();
 //
 //		}
-		
+		//this funtion will click on the list of all teacher one by one and open in new tab
 		for (int i = 0; i < list.size(); i++) {
 			
 			String key = Keys.chord(Keys.LEFT_CONTROL, Keys.ENTER);
