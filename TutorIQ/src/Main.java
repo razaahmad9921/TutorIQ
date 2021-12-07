@@ -46,9 +46,15 @@ public class Main {
 
 		driver.manage().window().maximize();
 		
-		GettingLinksInWebPage obj = new GettingLinksInWebPage();
+		driver.get("https://tutorsiq.com/");
 		
-		obj.getAllLinks(driver);
+		loginFunctionality(driver);
+		
+		FindTutor obj = new FindTutor();
+		
+		obj.searchByFee(driver);
+		
+		
 
 	}
 
