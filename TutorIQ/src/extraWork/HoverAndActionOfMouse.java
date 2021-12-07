@@ -18,7 +18,7 @@ public class HoverAndActionOfMouse {
 	public void example(WebDriver driver) {
 		
 		driver.get("https://prezentar.net/Welcome");
-		
+		 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 		driver.findElement(By.id("txtmail")).sendKeys("razalion903@gmail.com");
