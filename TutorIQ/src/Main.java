@@ -13,11 +13,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import StudentProfile.StudentProfile;
+import extraWork.Calendar;
 import extraWork.DropDownPractice;
+import extraWork.ExampleTableSSLCertificate;
 import extraWork.FrameWithDragDrop;
 import extraWork.GettingLinksInWebPage;
 import extraWork.HoverAndActionOfMouse;
@@ -33,30 +38,34 @@ import tutorForMe.TutorForMe;
 
 public class Main {
 
- 
-
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 
+		ChromeOptions handlingSSL = new ChromeOptions();
+
+		//Using the accept insecure cert method with true as parameter to accept the untrusted certificate
+		handlingSSL.setAcceptInsecureCerts(true);
+				
+		//Creating instance of Chrome driver by passing reference of ChromeOptions object
+		
+			
+	
+		
 		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
 
 		//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
-
-		WebDriver driver = new ChromeDriver();
+		
+		WebDriver driver = new ChromeDriver(handlingSSL);
 
 		driver.manage().window().maximize();
 		
-		driver.get("https://tutorsiq.com/");
+		ExampleTableSSLCertificate obj = new ExampleTableSSLCertificate();
 		
-		loginFunctionality(driver);
-		
-		FindTutor obj = new FindTutor();
-		
-		obj.searchByFee(driver);
-		
-		
+		obj.getDataForthColoumnRahul(driver); 
 
 	}
+	
+	
 
 	public static void helpMeFindTutor(WebDriver driver) {
 		
