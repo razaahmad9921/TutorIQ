@@ -47,17 +47,16 @@ public class Main {
 		handlingSSL.setAcceptInsecureCerts(true);
 				
 		//Creating instance of Chrome driver by passing reference of ChromeOptions object
-		
-			
-	
-		
 		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
 
-		//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver(handlingSSL);
 
-		driver.manage().window().maximize();
+		driver.manage().window().maximize(); 
+		
+		//delete cookies from the browser
+		driver.manage().deleteAllCookies();
 		
 		ExampleTableSSLCertificate obj = new ExampleTableSSLCertificate();
 		
