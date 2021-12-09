@@ -1,4 +1,5 @@
 
+import java.io.IOException;
 import java.sql.Driver;
 import java.time.Duration;
 import java.util.Iterator;
@@ -26,6 +27,7 @@ import extraWork.ExampleTableSSLCertificate;
 import extraWork.FrameWithDragDrop;
 import extraWork.GettingLinksInWebPage;
 import extraWork.HoverAndActionOfMouse;
+import extraWork.ScreenShotExample;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
 import findTutor.SearchTutorInFindTutor;
@@ -38,7 +40,7 @@ import tutorForMe.TutorForMe;
 
 public class Main {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		// TODO Auto-generated method stub
 
 		ChromeOptions handlingSSL = new ChromeOptions();
@@ -58,9 +60,9 @@ public class Main {
 		//delete cookies from the browser
 		driver.manage().deleteAllCookies();
 		
-		ExampleTableSSLCertificate obj = new ExampleTableSSLCertificate();
+		ScreenShotExample obj = new ScreenShotExample();
 		
-		obj.getDataForthColoumnRahul(driver); 
+		obj.takeScreenShot(driver); 
 
 	}
 	
