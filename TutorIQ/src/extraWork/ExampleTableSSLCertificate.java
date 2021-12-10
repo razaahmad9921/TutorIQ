@@ -14,7 +14,6 @@ public class ExampleTableSSLCertificate {
 
 		driver.get("https://www.rahulshettyacademy.com/AutomationPractice/");
 
-		
 
 		WebElement element = driver.findElement(By.xpath("//div[@class='tableFixHead']/table/tbody"));
 		

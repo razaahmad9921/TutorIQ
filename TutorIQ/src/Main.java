@@ -19,8 +19,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import StudentProfile.StudentProfile;
+import extraWork.BrokenURL;
 import extraWork.Calendar;
 import extraWork.DropDownPractice;
 import extraWork.ExampleTableSSLCertificate;
@@ -47,38 +49,38 @@ public class Main {
 
 		//Using the accept insecure cert method with true as parameter to accept the untrusted certificate
 		handlingSSL.setAcceptInsecureCerts(true);
-				
+
 		//Creating instance of Chrome driver by passing reference of ChromeOptions object
 		System.setProperty("webdriver.chrome.driver", "F:\\Projects\\Driver\\chromedriver.exe");
 
-//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
-		
+		//		System.setProperty("webdriver.chrome.driver", "D:\\Eclipse\\chromedriver.exe");
+
 		WebDriver driver = new ChromeDriver(handlingSSL);
 
 		driver.manage().window().maximize(); 
-		
+
 		//delete cookies from the browser
 		driver.manage().deleteAllCookies();
-		
-		ScreenShotExample obj = new ScreenShotExample();
-		
-		obj.takeScreenShot(driver); 
+
+		BrokenURL obj = new BrokenURL();
+
+		obj.brokenURL(driver); 
 
 	}
-	
-	
+
+
 
 	public static void helpMeFindTutor(WebDriver driver) {
-		
+
 
 		loginFunctionality(driver);
 
 		sleep(2000);
 
 		driver.findElement(By.xpath("//a[text()='Help Me To Find Tutor']")).click();
-		
+
 		HelpMeFindTutor obj = new HelpMeFindTutor();
-		
+
 		obj.findTutor(driver);
 	}
 	public static void tutorForMe(WebDriver driver) {
@@ -159,9 +161,9 @@ public class Main {
 	public static void FavoriteTutor(WebDriver driver) {
 
 		loginFunctionality(driver);
-		
+
 		sleep(2000);
-		
+
 		FavoriteTutor obj = new FavoriteTutor();
 
 		obj.getAllFavoriteTutor(driver);
