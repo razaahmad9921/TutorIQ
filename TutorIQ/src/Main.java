@@ -30,6 +30,7 @@ import extraWork.FrameWithDragDrop;
 import extraWork.GettingLinksInWebPage;
 import extraWork.HoverAndActionOfMouse;
 import extraWork.ScreenShotExample;
+import extraWork.SortingTable;
 import findTutor.FindTutor;
 import findTutor.RecomendedAndRatedTeacher;
 import findTutor.SearchTutorInFindTutor;
@@ -62,13 +63,11 @@ public class Main {
 		//delete cookies from the browser
 		driver.manage().deleteAllCookies();
 
-		BrokenURL obj = new BrokenURL();
+		SortingTable obj = new SortingTable();
 
-		obj.brokenURL(driver); 
+		obj.searchAllItems(driver); 
 
 	}
-
-
 
 	public static void helpMeFindTutor(WebDriver driver) {
 
