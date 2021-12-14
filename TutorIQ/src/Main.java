@@ -29,6 +29,7 @@ import extraWork.ExampleTableSSLCertificate;
 import extraWork.FrameWithDragDrop;
 import extraWork.GettingLinksInWebPage;
 import extraWork.HoverAndActionOfMouse;
+import extraWork.RelativeLocators;
 import extraWork.ScreenShotExample;
 import extraWork.SortingTable;
 import findTutor.FindTutor;
@@ -62,11 +63,14 @@ public class Main {
 
 		//delete cookies from the browser
 		driver.manage().deleteAllCookies();
+		
+	
+		
 
-		SortingTable obj = new SortingTable();
+		ScreenShotExample obj = new ScreenShotExample();
 
-		obj.searchAllItems(driver); 
-
+		obj.takeScreenShot(driver); 
+ 
 	}
 
 	public static void helpMeFindTutor(WebDriver driver) {

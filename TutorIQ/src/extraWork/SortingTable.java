@@ -33,7 +33,7 @@ public class SortingTable {
 		
 		for(int i=0;i < list.size();i++)
 		{
-			strArry[i]=list.get(i).getText();
+			strArry[i]=list.get(i).getText(); 
 		}
 		/*
 		 * Compare the String
