@@ -5,11 +5,16 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class FindTutor {
 
+	public void openAllTabs(WebDriver driver) {
+		
+	}
+	
 	public void searchByFee(WebDriver driver) {
 
 		driver.findElement(By.xpath("/html/body/section/div/div/div[2]/div[1]/div[1]/div")).click();
@@ -18,11 +23,11 @@ public class FindTutor {
 
 		List<WebElement> list = element.findElements(By.tagName("li"));
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size() + 1);
 
 		list.get(randomNum).click();
 
-		getListOfAllTutor(driver);
+		getListOfAllTutor(driver); 
 
 	}
 
@@ -32,7 +37,7 @@ public class FindTutor {
 
 		List<WebElement> list = element.findElements(By.className("teacher-listing-box"));
 		
-		clickThroughProfilePicture(list, driver);
+		clickThroughTeacherName(list, driver);
 
 	}
 
@@ -56,23 +61,32 @@ public class FindTutor {
 	}
 	public void clickThroughTeacherName( List <WebElement> list, WebDriver driver ) {
 
-		if (list.size() >= 1) {
-
-			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
-
-			System.out.println(randomNum);
-
-			list.get(randomNum).findElement(By.cssSelector("a.no-style")).click();
-
-			switchWindows(driver);
-
-		}
-		else {
-
-			sleep(1500);
-
-			driver.navigate().back();
-
+//		if (list.size() >= 1) {
+//
+//			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+//
+//			System.out.println(randomNum);
+//
+//			list.get(randomNum).findElement(By.cssSelector("a.no-style")).click();
+//
+//			switchWindows(driver);
+//
+//		}
+//		else {
+//
+//			sleep(1500);
+//
+//			driver.navigate().back();
+//
+//		}
+		//this funtion will click on the list of all teacher one by one and open in new tab
+		for (int i = 0; i < list.size(); i++) {
+			
+			String key = Keys.chord(Keys.LEFT_CONTROL, Keys.ENTER);
+			
+			list.get(i).findElement(By.cssSelector("a.no-style")).sendKeys(key);
+			
+			
 		}
 	}
 
@@ -80,7 +94,7 @@ public class FindTutor {
 
 		if (list.size() >= 1) {
 
-			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+			int randomNum = ThreadLocalRandom.current().nextInt(0, list.size() + 1);
 
 
 

@@ -258,7 +258,7 @@ public class SearchTutorInFindTutor {
 
 		List<WebElement> list = dd.getOptions();
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size() + 1);
 
 		dd.selectByIndex(randomNum);
 
@@ -274,7 +274,7 @@ public class SearchTutorInFindTutor {
 
 		List<WebElement> list = dd.getOptions();
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size()+1);
 
 		dd.selectByIndex(randomNum);
 
@@ -290,7 +290,7 @@ public class SearchTutorInFindTutor {
 
 		List<WebElement> list = dd.getOptions();
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size()+1 );
 
 		dd.selectByIndex(randomNum);
 
@@ -306,7 +306,7 @@ public class SearchTutorInFindTutor {
 
 		List<WebElement> list = dd.getOptions();
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size()+1);
 
 		dd.selectByIndex(randomNum);
 
@@ -322,7 +322,7 @@ public class SearchTutorInFindTutor {
 
 		List<WebElement> list = dd.getOptions();
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size() +1);
 
 		dd.selectByIndex(randomNum);
 
@@ -338,7 +338,7 @@ public class SearchTutorInFindTutor {
 
 		List<WebElement> list = dd.getOptions();
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size() +1);
 
 		dd.selectByIndex(randomNum);
 
@@ -354,7 +354,7 @@ public class SearchTutorInFindTutor {
 
 		List<WebElement> list = dd.getOptions();
 
-		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size());
+		int randomNum = ThreadLocalRandom.current().nextInt(0, list.size()+1);
 
 		dd.selectByIndex(randomNum);
 

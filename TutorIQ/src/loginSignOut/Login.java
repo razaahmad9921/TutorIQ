@@ -9,14 +9,22 @@ import org.testng.Assert;
 public class Login {
 
 	public void login(WebDriver driver) {
-
-		driver.findElement(By.xpath("/html/body/header/nav/div/ul/li[5]")).click();
+ 
+		driver.findElement(By.xpath("//ul[@class='navbar-nav ml-auto']/child::li[@class='nav-item']/a[text()='login']")).click();
 
 		sleep(1500);
+		
+		String emailMain = "critical9031@gmail.com";
+		
+		String passwordMain = "4303921Ee!";
+		
+		String email = "razaahmad9921@gmail.com";
+		
+		String password = "4303921Ee";
 
-		driver.findElement(By.cssSelector("input.form-control")).sendKeys("critical9031@gmail.com");
+		driver.findElement(By.cssSelector("input.form-control")).sendKeys(emailMain);
 
-		driver.findElement(By.id("password")).sendKeys("4303921Ee!");
+		driver.findElement(By.id("password")).sendKeys(passwordMain);
 
 		driver.findElement(By.cssSelector("button.btn")).click();
 
@@ -34,7 +42,7 @@ public class Login {
 
 		driver.findElement(By.cssSelector("button.btn")).click();
 		
-		sleep(1500);
+		sleep(1500); 
 		
 		String messageGet = driver.findElement(By.className("alert-danger")).getText();
 		
@@ -47,7 +55,7 @@ public class Login {
 	
 	public void forgotPassword(WebDriver driver) {
 		
-		driver.findElement(By.xpath("/html/body/header/nav/div/ul/li[5]")).click();
+		driver.findElement(By.xpath("//a[@class='forgot-pass-link']")).click();
 
 		sleep(1500);
 		
